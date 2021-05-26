@@ -9,14 +9,15 @@ import { validateSolidityTypeInstance } from '../utils'
  * The only instance of the base class `Currency` is Ether.
  */
 export class Currency {
-  public readonly decimals: number
-  public readonly symbol?: string
-  public readonly name?: string
+  public decimals: number
+  public symbol?: string
+  public name?: string
 
   /**
    * The only instance of the base class `Currency`.
    */
-  public static readonly ETHER: Currency = new Currency(18, 'ETH', 'Ether')
+  public static ETHER: Currency = new Currency(18, 'BNB', 'BNB')
+
 
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
@@ -30,6 +31,21 @@ export class Currency {
     this.decimals = decimals
     this.symbol = symbol
     this.name = name
+  }
+
+  change(cId:number){
+    if(cId==1){
+      ETHER.name = "Ether"
+      ETHER.symbol = "ETH"
+    }
+    if(cId==56){
+      ETHER.name = "BNB"
+      ETHER.symbol = "BNB"
+    }
+    if(cId==137){
+      ETHER.name = "Matic"
+      ETHER.symbol = "MATIC"
+    }
   }
 }
 

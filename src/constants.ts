@@ -10,6 +10,7 @@ export enum ChainId {
   GÖRLI = 5,
   KOVAN = 42,
   BINANCE = 56,
+  BINANCETEST = 97,
   POLYGON = 137
 }
 
